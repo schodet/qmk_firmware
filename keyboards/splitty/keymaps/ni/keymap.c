@@ -15,6 +15,7 @@ enum {
 #define NAV_SPC LT(NAV, KC_SPC)
 #define CTL_SPC MT(MOD_LCTL, KC_SPC)
 #define C LCTL
+#define KC_GTAB LGUI(KC_TAB)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BEPO] = LAYOUT(
@@ -31,8 +32,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|   ê   |   à   |   y   |   x   |   .   |   k   |  Del  |    |  <--  |   '   |   q   |   g   |   h   |   f   |   ç   |
      BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,BP_DOT , BP_K  ,KC_DEL ,     KC_BSPC,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |  Gui  |  App  |  Alt  |SpaceCt| Shift |    | Shift |SpaceNa| Ctrl  |  Num  |  Gui  |
-                     KC_LGUI,KC_APP ,KC_LALT,CTL_SPC,KC_LSFT,     KC_RSFT,NAV_SPC,KC_RCTL,MO(NUM),KC_RGUI
+  //                |  Gui  |  App  |  Alt  |SpaceCt| Shift |    | Shift |SpaceNa|  Gui  |  Num  | Ctrl  |
+                     KC_LGUI,KC_APP ,KC_LALT,CTL_SPC,KC_LSFT,     KC_RSFT,NAV_SPC,KC_RGUI,MO(NUM),KC_RCTL
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
@@ -41,8 +42,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|       |   —   |   <   |   >   |   [   |   ]   |   –   |    |   ‰   |   ^   |   ±   |   −   |   ÷   |   ×   |   ≠   |
        ___  ,BP_MDSH,BP_LESS,BP_GRTR,BP_LBRC,BP_RBRC,BP_NDSH,     BP_PMIL,BP_CIRC,BP_PSMS,BP_MMNS,BP_OBEL,BP_TIMS,BP_DIFF,
   //|-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------|
-  //|  d˘   |   |   |  d´   |   &   |   œ   |  d`   |       |    |       |  Del  | PgUp  |  Up   | PgDn  |       |       |
-     BP_DBRV,BP_PIPE,BP_DACT,BP_AMPR, BP_OE ,BP_DGRV,  ___  ,       ___  ,KC_DEL ,KC_PGUP, KC_UP ,KC_PGDN, KC_NO , KC_NO ,
+  //|  d˘   |   |   |  d´   |   &   |   œ   |  d`   |       |    |       |  Del  | PgUp  |  Up   | PgDn  | G-Tab |       |
+     BP_DBRV,BP_PIPE,BP_DACT,BP_AMPR, BP_OE ,BP_DGRV,  ___  ,       ___  ,KC_DEL ,KC_PGUP, KC_UP ,KC_PGDN,KC_GTAB, KC_NO ,
   //|-------+-------+-------+-------+-------+-------|       |    |       |-------+-------+-------+-------+-------+-------|
   //| CAPS  |   æ   |   ù   |  d¨   |   €   |   ’   |       |    |       |  <--  | Left  | Down  | Right | Enter |       |
      KC_CAPS, BP_AE ,BP_UGRV,BP_DTRM,BP_EURO,BP_TAPO,/*-----|    |------*/KC_BSPC,KC_LEFT,KC_DOWN,KC_RGHT,KC_ENT , KC_NO ,
@@ -82,8 +83,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|   %   |   1   |   2   |   3   |   4   |   5   |       |    |       |   6   |   7   |   8   |   9   |   0   |       |
      BP_PERC, BP_1  , BP_2  , BP_3  , BP_4  , BP_5  ,  ___  ,       ___  , BP_6  , BP_7  , BP_8  , BP_9  , BP_0  ,  ___  ,
   //|-------+-------+-------+-------+-------+-------|       |    |       |-------+-------+-------+-------+-------+-------|
-  //|   $   |   "   |   «   |   »   |   (   |   )   |       |    |       |       |   4   |   5   |   6   | Enter |       |
-     BP_DLR ,BP_DQOT,BP_LGIL,BP_RGIL,BP_LPRN,BP_RPRN,/*-----|    |------*/  ___  , BP_4  , BP_5  , BP_6  ,KC_ENT ,  ___  ,
+  //|   $   |   "   |   «   |   »   |   (   |   )   |       |    |       |  <--  |   4   |   5   |   6   | Enter |       |
+     BP_DLR ,BP_DQOT,BP_LGIL,BP_RGIL,BP_LPRN,BP_RPRN,/*-----|    |------*/KC_BSPC, BP_4  , BP_5  , BP_6  ,KC_ENT ,  ___  ,
   //|-------+-------+-------+-------+-------+-------|       |    |       |-------+-------+-------+-------+-------+-------|
   //|   =   |   *   |   /   |   -   |   +   |   @   |       |    |       |       |   1   |   2   |   3   |   ,   |       |
      BP_EQL ,BP_ASTR,BP_SLSH,BP_MINS,BP_PLUS, BP_AT ,  ___  ,       ___  ,  ___  , BP_1  , BP_2  , BP_3  ,BP_COMM,  ___  ,
