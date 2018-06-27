@@ -29,11 +29,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|  Tab  |   a   |   u   |   i   |   e   |   ,   |       |    |       |   c   |   t   |   s   |   r   |   n   |   m   |
      KC_TAB , BP_A  , BP_U  , BP_I  , BP_E  ,BP_COMM,/*-----|    |------*/ BP_C  , BP_T  , BP_S  , BP_R  , BP_N  , BP_M  ,
   //|-------+-------+-------+-------+-------+-------|       |    |       |-------+-------+-------+-------+-------+-------|
-  //|   ê   |   à   |   y   |   x   |   .   |   k   |  Del  |    |  <--  |   '   |   q   |   g   |   h   |   f   |   ç   |
-     BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,BP_DOT , BP_K  ,KC_DEL ,     KC_BSPC,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
+  //|   ê   |   à   |   y   |   x   |   .   |   k   | G-Tab |    |  <--  |   '   |   q   |   g   |   h   |   f   |   ç   |
+     BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,BP_DOT , BP_K  ,KC_GTAB,     KC_BSPC,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |  Gui  |  App  |  Alt  |SpaceCt| Shift |    | Shift |SpaceNa|  Gui  |  Num  | Ctrl  |
-                     KC_LGUI,KC_APP ,KC_LALT,CTL_SPC,KC_LSFT,     KC_RSFT,NAV_SPC,KC_RGUI,MO(NUM),KC_RCTL
+  //                |  App  |  Gui  |  Alt  |SpaceCt| Shift |    | Shift |SpaceNa|  Num  |  Gui  | Ctrl  |
+                     KC_APP ,KC_LGUI,KC_LALT,CTL_SPC,KC_LSFT,     KC_RSFT,NAV_SPC,MO(NUM),KC_RGUI,KC_RCTL
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
@@ -42,8 +42,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|       |   —   |   <   |   >   |   [   |   ]   |   –   |    |   ‰   |   ^   |   ±   |   −   |   ÷   |   ×   |   ≠   |
        ___  ,BP_MDSH,BP_LESS,BP_GRTR,BP_LBRC,BP_RBRC,BP_NDSH,     BP_PMIL,BP_CIRC,BP_PSMS,BP_MMNS,BP_OBEL,BP_TIMS,BP_DIFF,
   //|-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------|
-  //|  d˘   |   |   |  d´   |   &   |   œ   |  d`   |       |    |       |  Del  | PgUp  |  Up   | PgDn  | G-Tab |       |
-     BP_DBRV,BP_PIPE,BP_DACT,BP_AMPR, BP_OE ,BP_DGRV,  ___  ,       ___  ,KC_DEL ,KC_PGUP, KC_UP ,KC_PGDN,KC_GTAB, KC_NO ,
+  //|  d˘   |   |   |  d´   |   &   |   œ   |  d`   |       |    |       |  Del  | PgUp  |  Up   | PgDn  |       |       |
+     BP_DBRV,BP_PIPE,BP_DACT,BP_AMPR, BP_OE ,BP_DGRV,  ___  ,       ___  ,KC_DEL ,KC_PGUP, KC_UP ,KC_PGDN, KC_NO , KC_NO ,
   //|-------+-------+-------+-------+-------+-------|       |    |       |-------+-------+-------+-------+-------+-------|
   //| CAPS  |   æ   |   ù   |  d¨   |   €   |   ’   |       |    |       |  <--  | Left  | Down  | Right | Enter |       |
      KC_CAPS, BP_AE ,BP_UGRV,BP_DTRM,BP_EURO,BP_TAPO,/*-----|    |------*/KC_BSPC,KC_LEFT,KC_DOWN,KC_RGHT,KC_ENT , KC_NO ,
@@ -51,8 +51,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|   /   |   \   |   {   |   }   |   …   |   ~   |       |    |       |  ^W   | Home  |d Greek|  End  | Insert|       |
      BP_NUSL,BP_BSLS,BP_LCBR,BP_RCBR,BP_ELPS,BP_TILD,  ___  ,       ___  ,C(BP_W),KC_HOME,BP_DGRK,KC_END ,KC_INS , KC_NO ,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |       |       | AltGr |   _   |       |    |       |       |       |  Fn   |NavLock|
-                       ___  ,  ___  ,BP_ALGR,BP_UNDS,  ___  ,       ___  ,  ___  ,  ___  ,MO(FUN),TO(NAVO)
+  //                |       |       | AltGr |   _   |       |    |       |       |  Fn   |NavLock|       |
+                       ___  ,  ___  ,BP_ALGR,BP_UNDS,  ___  ,       ___  ,  ___  ,MO(FUN),TO(NAVO), ___
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
@@ -89,8 +89,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|   =   |   *   |   /   |   -   |   +   |   @   |       |    |       |       |   1   |   2   |   3   |   ,   |       |
      BP_EQL ,BP_ASTR,BP_SLSH,BP_MINS,BP_PLUS, BP_AT ,  ___  ,       ___  ,  ___  , BP_1  , BP_2  , BP_3  ,BP_COMM,  ___  ,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |       |       |       |       |       |    |       |       |   0   |       |   .   |
-                       ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,  ___  , BP_0  ,  ___  ,BP_DOT
+  //                |       |       |       |       |       |    |       |       |       |   0   |   .   |
+                       ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,  ___  ,  ___  , BP_0  ,BP_DOT
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
