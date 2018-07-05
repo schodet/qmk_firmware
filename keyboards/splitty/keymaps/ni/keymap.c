@@ -33,8 +33,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|   ê   |   à   |   y   |   x   |   .   |   k   | G-Tab |    |  <--  |   '   |   q   |   g   |   h   |   f   |   ç   |
      BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,BP_DOT , BP_K  ,KC_GTAB,     KC_BSPC,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |  Gui  |  App  |  Alt  |SpaceCt| Shift |    | Shift |SpaceNa| Lower |  Num  |  Gui  |
-                     KC_LGUI,KC_APP ,KC_LALT,CTL_SPC,KC_LSFT,     KC_RSFT,NAV_SPC,MO(LOW),MO(NUM),KC_RGUI
+  //                |  Gui  | Lower |  Alt  | Ctrl  | Shift |    | Shift | Space |Nav/AlG|  Num  |  Gui  |
+                     KC_LGUI,MO(LOW),KC_LALT,KC_LCTL,KC_LSFT,     KC_RSFT,KC_SPC ,MO(NAV),MO(NUM),KC_RGUI
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
@@ -52,8 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|   /   |   \   |   {   |   }   |   …   |   ~   |       |    |       |  ^W   | Home  |d Greek|  End  | Insert|       |
      BP_NUSL,BP_BSLS,BP_LCBR,BP_RCBR,BP_ELPS,BP_TILD,  ___  ,       ___  ,C(BP_W),KC_HOME,BP_DGRK,KC_END ,KC_INS , KC_NO ,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |       |       | AltGr |   _   |       |    |       |       |       |  Fn   |NavLock|
-                       ___  ,  ___  ,BP_ALGR,BP_UNDS,  ___  ,       ___  ,  ___  ,  ___  ,MO(FUN),TO(NAVO)
+  //                |       |  App  | AltGr |   _   |       |    |       |   _   |       |  Fn   |NavLock|
+                       ___  ,KC_APP ,BP_ALGR,BP_UNDS,  ___  ,       ___  ,BP_UNDS,  ___  ,MO(FUN),TO(NAVO)
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
@@ -71,8 +71,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|       |       |       |       |       |       |       |    |       |       | Home  |       |  End  | Insert|       |
        ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  , KC_NO ,KC_HOME, KC_NO ,KC_END ,KC_INS , KC_NO ,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |       |       |       |       |       |    |       | Space |       |       |       |
-                       ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,KC_SPC ,  ___  ,  ___  ,  ___
+  //                |       |       |       |       |       |    |       |       |       |       |       |
+                       ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,  ___  ,  ___  ,  ___  ,  ___
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
@@ -109,8 +109,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|       |       |       |       |       |       |       |    |       |       |       |       |       |       |       |
        ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |       |       |       |       |       |    |       | AltGr |       |       |       |
-                       ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,BP_ALGR,  ___  ,  ___  ,  ___
+  //                |       |       |       |       |       |    |       |       | AltGr |       |       |
+                       ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,  ___  ,BP_ALGR,  ___  ,  ___
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
