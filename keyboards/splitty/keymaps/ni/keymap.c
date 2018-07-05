@@ -33,8 +33,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|   ê   |   à   |   y   |   x   |   .   |   k   | G-Tab |    |  <--  |   '   |   q   |   g   |   h   |   f   |   ç   |
      BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,BP_DOT , BP_K  ,KC_GTAB,     KC_BSPC,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |  Gui  | Lower |  Alt  | Ctrl  | Shift |    | Shift | Space |Nav/AlG|  Num  |  Gui  |
-                     KC_LGUI,MO(LOW),KC_LALT,KC_LCTL,KC_LSFT,     KC_RSFT,KC_SPC ,MO(NAV),MO(NUM),KC_RGUI
+  //                |  Gui  |  Alt  | Lower | Ctrl  | Shift |    | Shift | Space |Nav/AlG|  Num  |  Gui  |
+                     KC_LGUI,KC_LALT,MO(LOW),KC_LCTL,KC_LSFT,     KC_RSFT,KC_SPC ,MO(NAV),MO(NUM),KC_RGUI
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
@@ -52,8 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|   /   |   \   |   {   |   }   |   …   |   ~   |       |    |       |  ^W   | Home  |d Greek|  End  | Insert|       |
      BP_NUSL,BP_BSLS,BP_LCBR,BP_RCBR,BP_ELPS,BP_TILD,  ___  ,       ___  ,C(BP_W),KC_HOME,BP_DGRK,KC_END ,KC_INS , KC_NO ,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |       |  App  | AltGr |   _   |       |    |       |   _   |       |  Fn   |NavLock|
-                       ___  ,KC_APP ,BP_ALGR,BP_UNDS,  ___  ,       ___  ,BP_UNDS,  ___  ,MO(FUN),TO(NAVO)
+  //                |       | AltGr |       |   _   |       |    |       |   _   |       |  Fn   |NavLock|
+                       ___  ,BP_ALGR,  ___  ,BP_UNDS,  ___  ,       ___  ,BP_UNDS,  ___  ,MO(FUN),TO(NAVO)
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
@@ -128,8 +128,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|       |       |       |       |       |       |       |    |       |       |       |       |       |       |PrntScr|
        ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,KC_PSCR,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |       |       |       |       |       |    |       |       |       |       |       |
-                       ___  ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,  ___  ,  ___  ,  ___  ,  ___
+  //                |  App  |       |       |       |       |    |       |       |       |       |       |
+                     KC_APP ,  ___  ,  ___  ,  ___  ,  ___  ,       ___  ,  ___  ,  ___  ,  ___  ,  ___
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
