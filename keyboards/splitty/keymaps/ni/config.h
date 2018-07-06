@@ -29,5 +29,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define USE_I2C
 
 #define PREVENT_STUCK_MODIFIERS
+#define IGNORE_MOD_TAP_INTERRUPT
+#define TAPPING_FORCE_HOLD
+#define PERMISSIVE_HOLD
 
 #endif
