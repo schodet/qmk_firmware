@@ -25,13 +25,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC ,BP_DQOT,BP_LGIL,BP_RGIL,BP_LPRN,BP_RPRN,BP_DLR ,     BP_PERC, BP_AT ,BP_PLUS,BP_MINS,BP_SLSH,BP_ASTR,BP_EQL ,
   //|-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------|
   //|   w   |   b   |   é   |   p   |   o   |   è   |       |    |       |  d^   |   v   |   d   |   l   |   j   |   z   |
-      BP_W  , BP_B  ,BP_ECUT, BP_P  , BP_O  ,BP_EGRV,KC_ENT ,     KC_ENT ,BP_DCRC, BP_V  , BP_D  , BP_L  , BP_J  , BP_Z  ,
-  //|-------+-------+-------+-------+-------+-------| Enter |    | Enter |-------+-------+-------+-------+-------+-------|
+      BP_W  , BP_B  ,BP_ECUT, BP_P  , BP_O  ,BP_EGRV,KC_ENT ,     KC_BSPC,BP_DCRC, BP_V  , BP_D  , BP_L  , BP_J  , BP_Z  ,
+  //|-------+-------+-------+-------+-------+-------| Enter |    |  <--  |-------+-------+-------+-------+-------+-------|
   //|  Tab  |   a   |   u   |   i   |   e   |   ,   |       |    |       |   c   |   t   |   s   |   r   |   n   |   m   |
      KC_TAB , BP_A  , BP_U  , BP_I  , BP_E  ,BP_COMM,/*-----|    |------*/ BP_C  , BP_T  , BP_S  , BP_R  , BP_N  , BP_M  ,
   //|-------+-------+-------+-------+-------+-------|       |    |       |-------+-------+-------+-------+-------+-------|
-  //|   ê   |   à   |   y   |   x   |   .   |   k   | G-Tab |    |  <--  |   '   |   q   |   g   |   h   |   f   |   ç   |
-     BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,BP_DOT , BP_K  ,KC_GTAB,     KC_BSPC,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
+  //|   ê   |   à   |   y   |   x   |   .   |   k   | G-Tab |    | Enter |   '   |   q   |   g   |   h   |   f   |   ç   |
+     BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,BP_DOT , BP_K  ,KC_GTAB,     KC_ENT ,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
   //                |  Gui  |  Alt  | Lower |SpaceCt| Shift |    | Shift |SpaceNa| Lower |  Num  |  Gui  |
                      KC_LGUI,KC_LALT,MO(LOW),CTL_SPC,KC_LSFT,     KC_RSFT,NAV_SPC,MO(LOW),MO(NUM),KC_RGUI
