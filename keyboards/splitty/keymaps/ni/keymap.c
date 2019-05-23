@@ -18,6 +18,7 @@ enum {
 #define CTL_BSP MT(MOD_LCTL, KC_BSPC)
 #define LOW_ESC LT(LOW, KC_ESC)
 #define LOW_ENT LT(LOW, KC_ENT)
+#define NUM_DOT LT(NUM, BP_DOT)
 #define C LCTL
 #define KC_GTAB LGUI(KC_TAB)
 
@@ -33,8 +34,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|  Tab  |   a   |   u   |   i   |   e   |   ,   |       |    |       |   c   |   t   |   s   |   r   |   n   |   m   |
      KC_TAB , BP_A  , BP_U  , BP_I  , BP_E  ,BP_COMM,/*-----|    |------*/ BP_C  , BP_T  , BP_S  , BP_R  , BP_N  , BP_M  ,
   //|-------+-------+-------+-------+-------+-------|       |    |       |-------+-------+-------+-------+-------+-------|
-  //|   ê   |   à   |   y   |   x   |   .   |   k   | G-Tab |    | Enter |   '   |   q   |   g   |   h   |   f   |   ç   |
-     BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,BP_DOT , BP_K  ,KC_GTAB,     KC_ENT ,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
+  //|   ê   |   à   |   y   |   x   | ./Num |   k   | G-Tab |    | Enter |   '   |   q   |   g   |   h   |   f   |   ç   |
+     BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,NUM_DOT, BP_K  ,KC_GTAB,     KC_ENT ,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
   //                |  Gui  |  Alt  |Esc/Low|<--/Ctl| Shift |    | Shift |Spc/Nav|Ent/Low|  Num  |  Gui  |
                      KC_LGUI,KC_LALT,LOW_ESC,CTL_BSP,KC_LSFT,     KC_RSFT,NAV_SPC,LOW_ENT,MO(NUM),KC_RGUI
