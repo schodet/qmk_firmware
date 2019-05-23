@@ -15,6 +15,9 @@ enum {
 #define ___ KC_TRNS
 #define NAV_SPC LT(NAV, KC_SPC)
 #define CTL_SPC MT(MOD_LCTL, KC_SPC)
+#define CTL_BSP MT(MOD_LCTL, KC_BSPC)
+#define LOW_ESC LT(LOW, KC_ESC)
+#define LOW_ENT LT(LOW, KC_ENT)
 #define C LCTL
 #define KC_GTAB LGUI(KC_TAB)
 
@@ -33,8 +36,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|   ê   |   à   |   y   |   x   |   .   |   k   | G-Tab |    | Enter |   '   |   q   |   g   |   h   |   f   |   ç   |
      BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,BP_DOT , BP_K  ,KC_GTAB,     KC_ENT ,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
-  //                |  Gui  |  Alt  | Lower |SpaceCt| Shift |    | Shift |SpaceNa| Lower |  Num  |  Gui  |
-                     KC_LGUI,KC_LALT,MO(LOW),CTL_SPC,KC_LSFT,     KC_RSFT,NAV_SPC,MO(LOW),MO(NUM),KC_RGUI
+  //                |  Gui  |  Alt  |Esc/Low|<--/Ctl| Shift |    | Shift |Spc/Nav|Ent/Low|  Num  |  Gui  |
+                     KC_LGUI,KC_LALT,LOW_ESC,CTL_BSP,KC_LSFT,     KC_RSFT,NAV_SPC,LOW_ENT,MO(NUM),KC_RGUI
   //                `-------+-------+-------+-------+-------'    `-------+-------+-------+-------+-------'
   ),
 
