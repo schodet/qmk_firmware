@@ -43,8 +43,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|       |   —   |   <   |   >   |   [   |   ]   |   –   |    |   ‰   |   ^   |   ±   |   −   |   ÷   |   ×   |   ≠   |
        ___  ,BP_MDSH,BP_LESS,BP_GRTR,BP_LBRC,BP_RBRC,BP_NDSH,     BP_PMIL,BP_CIRC,BP_PSMS,BP_MMNS,BP_OBEL,BP_TIMS,BP_DIFF,
   //|-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------|
-  //|  d˘   |   |   |  d´   |   &   |   œ   |  d`   |       |    |       |  Del  | PgUp  |  Up   | PgDn  |  ^P   |  ^N   |
-     BP_DBRV,BP_PIPE,BP_DACT,BP_AMPR, BP_OE ,BP_DGRV,  ___  ,       ___  ,KC_DEL ,KC_PGUP, KC_UP ,KC_PGDN,C(BP_P),C(BP_N),
+  //|  d˘   |   |   |  d´   |   &   |   œ   |  d`   |       |    |       |  Del  | PgUp  |  Up   | PgDn  |       |       |
+     BP_DBRV,BP_PIPE,BP_DACT,BP_AMPR, BP_OE ,BP_DGRV,  ___  ,       ___  ,KC_DEL ,KC_PGUP, KC_UP ,KC_PGDN, KC_NO , KC_NO ,
   //|-------+-------+-------+-------+-------+-------|       |    |       |-------+-------+-------+-------+-------+-------|
   //| CAPS  |   æ   |   ù   |  d¨   |   €   |   ’   |       |    |       |  <--  | Left  | Down  | Right | Enter |       |
      KC_CAPS, BP_AE ,BP_UGRV,BP_DTRM,BP_EURO,BP_TAPO,/*-----|    |------*/KC_BSPC,KC_LEFT,KC_DOWN,KC_RGHT,KC_ENT , KC_NO ,
