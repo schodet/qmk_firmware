@@ -12,6 +12,10 @@ enum {
     FUN,  // Function.
 };
 
+enum {
+    KC_GTAB = SAFE_RANGE,
+};
+
 #define ___ KC_TRNS
 #define NAV_SPC LT(NAV, KC_SPC)
 #define CTL_SPC MT(MOD_LCTL, KC_SPC)
@@ -20,7 +24,6 @@ enum {
 #define LOW_ENT LT(LOW, KC_ENT)
 #define NUM_DOT LT(NUM, BP_DOT)
 #define C LCTL
-#define KC_GTAB LGUI(KC_TAB)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BEPO] = LAYOUT(
@@ -33,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-------+-------+-------+-------+-------+-------| Enter |    |  <--  |-------+-------+-------+-------+-------+-------|
   //|  Tab  |   a   |   u   |   i   |   e   |   ,   |       |    |       |   c   |   t   |   s   |   r   |   n   |   m   |
      KC_TAB , BP_A  , BP_U  , BP_I  , BP_E  ,BP_COMM,/*-----|    |------*/ BP_C  , BP_T  , BP_S  , BP_R  , BP_N  , BP_M  ,
-  //|-------+-------+-------+-------+-------+-------|       |    |       |-------+-------+-------+-------+-------+-------|
+  //|-------+-------+-------+-------+-------+-------|  Gui/ |    |       |-------+-------+-------+-------+-------+-------|
   //|   ê   |   à   |   y   |   x   | ./Num |   k   | G-Tab |    | Enter |   '   |   q   |   g   |   h   |   f   |   ç   |
      BP_ECRC,BP_AGRV, BP_Y  , BP_X  ,NUM_DOT, BP_K  ,KC_GTAB,     KC_ENT ,BP_APOS, BP_Q  , BP_G  , BP_H  , BP_F  ,BP_CCED,
   //`-------+-------+-------+-------+-------+-------+-------|    |-------+-------+-------+-------+-------+-------+-------'
@@ -158,3 +161,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 #endif
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    static uint16_t gtab_timer;
+    static bool gtab_running = false;
+    switch(keycode) {
+    case KC_GTAB:
+	if (record->event.pressed) {
+	    register_code(KC_LGUI);
+	    gtab_timer = timer_read();
+	    gtab_running = true;
+	} else {
+	    if (gtab_running && timer_elapsed(gtab_timer) < 200) {
+		register_code(KC_TAB);
+		unregister_code(KC_TAB);
+	    }
+	    unregister_code(KC_LGUI);
+	}
+	return false;
+    default:
+	gtab_running = false;
+    }
+    return true;
+}
